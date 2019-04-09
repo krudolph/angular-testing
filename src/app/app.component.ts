@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {faCrown} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'br-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'book-ratings';
+  title = 'Book Ratings';
+  faCrown = faCrown;
 }

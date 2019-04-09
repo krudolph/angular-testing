@@ -1,0 +1,14 @@
+<div class="card shadow-sm m-1" style="width: 20rem;">
+  <img src="//api.angular.schule/avatar/{{ book.rating }}" class="card-img-top" alt="...">
+  <div class="card-img-overlay m-0 p-2">
+    <br-book-rating [book]="book"
+                    (rateUp)="rateUp(book)"
+                    (rateDown)="rateDown(book)"></br-book-rating>
+  </div>
+  <div class="card-body">
+
+    <h4 class="card-title">{{book.title}}</h4>
+    <h6 class="card-subtitle mb-2 text-muted">ISBN {{book.isbn}}</h6>
+    <p class="card-text">{{book.description}}</p>
+  </div>
+</div>
