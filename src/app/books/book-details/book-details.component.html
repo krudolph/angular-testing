@@ -1,0 +1,19 @@
+<div *ngIf="book; else loading" class="card shadow-sm m-1">
+
+  <div class="card-img-overlay m-0 p-2">
+    <br-book-rating (rateDown)="rateDown(book)"
+                    (rateUp)="rateUp(book)"
+                    [book]="book"></br-book-rating>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">{{book.title}}</h4>
+    <h6 class="card-subtitle mb-2 text-muted">ISBN {{book.isbn}}</h6>
+    <p class="card-text">{{book.description}}</p>
+  </div>
+  <img alt="..." class="card-img-bottom"
+       src="{{book.firstThumbnailUrl}}">
+</div>
+
+<ng-template #loading>
+  Wird geladen...
+</ng-template>
