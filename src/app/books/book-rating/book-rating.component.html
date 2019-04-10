@@ -1,9 +1,14 @@
-<span class="badge badge-light float-right" style="  background:rgba(255,255,255,0.7);">
+<span class="badge badge-light float-right"
+      style="  background:rgba(255,255,255,0.7);">
   <span *ngFor="let x of getRatings()">
     <fa-icon [icon]="faStar" class="text-warning fa-lg"></fa-icon>
   </span>
   <span class="btn-group btn-group-sm ml-1">
-  <button class="btn btn-success" (click)="doRateUp()"><fa-icon [icon]="faThumbsUp"></fa-icon></button>
-  <button class="btn btn-danger" (click)="doRateDown()"><fa-icon [icon]="faThumbsDown"></fa-icon></button>
+  <button (click)="doRateUp()" class="btn btn-success"
+          data-testing-id="rateUpBtn"><fa-icon
+    [icon]="faThumbsUp"></fa-icon></button>
+  <button (click)="doRateDown()" class="btn btn-danger"
+          data-testing-id="rateDownBtn"><fa-icon
+    [icon]="faThumbsDown"></fa-icon></button>
     </span>
 </span>

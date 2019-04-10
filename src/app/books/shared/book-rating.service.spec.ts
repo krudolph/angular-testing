@@ -11,11 +11,12 @@ describe('BookRatingService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   beforeEach(() => {
+
     book = {
-      description: 'desc',
-      isbn: '123',
+      description: '',
+      isbn: '',
       rating: 3,
-      title: 'asd'
+      title: ''
     };
 
     service = TestBed.get(BookRatingService);
@@ -40,7 +41,7 @@ describe('BookRatingService', () => {
   });
 
   it('should rate down to 1 and not lower', () => {
-    book.rating = 1
+    book.rating = 1;
     expect(service.rateDown(book).rating).toBe(1);
   });
 
