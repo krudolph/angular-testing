@@ -1,14 +1,16 @@
+
 <div class="card-deck">
   <br-book (rateBookDown)="rateDown($event)"
            (rateBookUp)="rateUp($event)"
-           *ngFor="let book of books; index as i; trackBy: trackBook"
+           *ngFor="let book of books | async; index as i; trackBy: trackBook"
            [book]="book"></br-book>
 </div>
+<span>{{booksSize}} Books</span>
 
-<h3>{{books.length}} Books</h3>
+<hr />
 
 <ul>
-  <li *ngFor="let b of books; index as i; trackBy: trackBook">
+  <li *ngFor="let b of books | async; index as i; trackBy: trackBook">
     {{i + 1}} {{b.title}}
   </li>
 </ul>

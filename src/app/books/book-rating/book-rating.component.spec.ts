@@ -4,6 +4,7 @@ import {BookRatingComponent} from './book-rating.component';
 import {Book} from '../shared/book';
 import {By} from '@angular/platform-browser';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('BookRatingComponent', () => {
   let component: BookRatingComponent;
@@ -12,7 +13,7 @@ describe('BookRatingComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BookRatingComponent],
-      imports: [FontAwesomeModule]
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));
@@ -23,9 +24,11 @@ describe('BookRatingComponent', () => {
 
     component.book = {
       description: '',
+      subtitle: '',
       isbn: '',
       rating: 1,
-      title: ''
+      title: '',
+      firstThumbnailUrl: ''
     };
 
     fixture.detectChanges();

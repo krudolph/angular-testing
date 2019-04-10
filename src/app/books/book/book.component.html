@@ -1,15 +1,13 @@
-<div class="card shadow-sm m-1" style="width: 20rem;">
-  <img alt="..." class="card-img-top"
-       src="//api.angular.schule/avatar/{{ book.rating }}">
+<div class="card shadow-sm m-1" style="width: 21rem;">
+  <img alt="..." class="card-img-top" src="{{book.firstThumbnailUrl}}">
   <div class="card-img-overlay m-0 p-2">
     <br-book-rating (rateDown)="rateDown(book)"
                     (rateUp)="rateUp(book)"
                     [book]="book"></br-book-rating>
   </div>
   <div class="card-body">
-
-    <h4 class="card-title">{{book.title}}</h4>
+    <h4 class="card-title"><a style="position:relative;" [routerLink]="['/books', book.isbn]">{{book.title}}</a></h4>
     <h6 class="card-subtitle mb-2 text-muted">ISBN {{book.isbn}}</h6>
-    <p class="card-text">{{book.description}}</p>
+    <p class="card-text">{{book.subtitle}}</p>
   </div>
 </div>

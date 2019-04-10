@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Book} from '../shared/book';
 import {BookRatingService} from '../shared/book-rating.service';
+import {BookStoreService} from '../shared/book-store.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'br-dashboard',
@@ -9,23 +11,16 @@ import {BookRatingService} from '../shared/book-rating.service';
 })
 export class DashboardComponent implements OnInit {
 
-  books: Book[];
-
+  books: Observable<Book[]>;
+  booksSize = 0;
   url = 'www.dataport.de';
 
-  constructor(private rs: BookRatingService) {
+  constructor(private rs: BookRatingService, private bs: BookStoreService) {
   }
 
-  ngOnInit() {
-    this.books = [
-      {isbn: '123456798', description: 'Lirumlarum', title: 'book1', rating: 5},
-      {isbn: '555444666', description: 'Lalala', title: 'book2', rating: 4},
-      {isbn: '99554311', description: 'Test123', title: 'book3', rating: 3},
-      {isbn: '9955511', description: 'Test123', title: 'book4', rating: 2},
-      {isbn: '9956511', description: 'Test123', title: 'book5', rating: 1},
-      {isbn: '9957511', description: 'Test123', title: 'book6', rating: 1},
-
-    ];
+  ngOnInit(): void {
+    this.books = this.bs.getAll();
+    this.books.subscribe(books => this.booksSize = books.length);
   }
 
   trackBook(index: number, book: Book) {
@@ -34,18 +29,10 @@ export class DashboardComponent implements OnInit {
 
   rateUp(book: Book) {
     const updated = this.rs.rateUp(book);
-    this.updateBookList(updated);
   }
 
   rateDown(book: Book) {
     const updated = this.rs.rateDown(book);
-    this.updateBookList(updated);
-  }
-
-  updateBookList(book: Book) {
-    this.books = this.books
-      .map(b => b.isbn === book.isbn ? book : b)
-      .sort((a, b) => b.rating - a.rating);
   }
 
 }

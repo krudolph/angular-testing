@@ -14,9 +14,11 @@ describe('BookRatingService', () => {
 
     book = {
       description: '',
+      subtitle: '',
       isbn: '',
       rating: 3,
-      title: ''
+      title: '',
+      firstThumbnailUrl: ''
     };
 
     service = TestBed.get(BookRatingService);

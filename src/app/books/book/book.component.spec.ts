@@ -3,6 +3,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {BookComponent} from './book.component';
 import {BookRatingComponent} from '../book-rating/book-rating.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('BookComponent', () => {
 
@@ -12,7 +13,7 @@ describe('BookComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BookComponent, BookRatingComponent],
-      imports: [FontAwesomeModule]
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));
@@ -23,9 +24,11 @@ describe('BookComponent', () => {
 
     component.book = {
       description: '',
+      subtitle: '',
       isbn: '',
       rating: 1,
-      title: ''
+      title: '',
+      firstThumbnailUrl: ''
     };
 
     fixture.detectChanges();
@@ -34,9 +37,5 @@ describe('BookComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-//   it('should emit rate up event', () => {
-// component.rateUp.subs
-//   });
 
 });

@@ -3,15 +3,15 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {AppComponent} from './app.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {BooksModule} from './books/books.module';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
-        FontAwesomeModule,
-        BooksModule
+        RouterTestingModule
       ],
+      schemas: [NO_ERRORS_SCHEMA],
       declarations: [
         AppComponent
       ],
