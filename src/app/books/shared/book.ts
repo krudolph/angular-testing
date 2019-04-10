@@ -1,3 +1,5 @@
+import {Thumbnail} from './Thumbnail';
+
 export interface Book {
   isbn: string;
   title: string;
@@ -5,4 +7,5 @@ export interface Book {
   description: string;
   rating: number;
   firstThumbnailUrl: string;
+  thumbnails: Thumbnail[];
 }
