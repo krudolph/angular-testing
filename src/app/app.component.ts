@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {faCrown} from '@fortawesome/free-solid-svg-icons';
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'br-root',
@@ -9,4 +10,13 @@ import {faCrown} from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'Book Ratings';
   faCrown = faCrown;
+
+  constructor(private auth: AuthService) {
+
+  }
+
+
+  login() {
+    this.auth.authorize();
+  }
 }
