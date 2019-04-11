@@ -20,7 +20,7 @@
               formControlName="description"></textarea>
   </div>
   <div formArrayName="thumbnails">
-    <div *ngFor="let th of thumbnails.controls; index as i">
+    <div *ngFor="let th of thumbnails; index as i">
       <div [formGroupName]="i">
         <div class="form-group">
           <label for="ttitle">Thumbnail Title</label>

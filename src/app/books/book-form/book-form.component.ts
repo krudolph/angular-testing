@@ -19,7 +19,7 @@ export class BookFormComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject();
 
-  private results$ = new Observable<Book[]>();
+  public results$ = new Observable<Book[]>();
 
   constructor(private bs: BookStoreService) {
   }
