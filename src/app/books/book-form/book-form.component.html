@@ -1,13 +1,13 @@
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="isbn">ISBN</label>
+    <label for="isbn" i18n="@@isbnlabel">ISBN</label>
     <input class="form-control" id="isbn" formControlName="isbn">
-    <div *ngIf="isInvalid('isbn')" class="feedback-red">ISBN ist
+    <div *ngIf="isInvalid('isbn')" class="feedback-red" i18n="@@isbnmessage">ISBN ist
       ungültig
     </div>
   </div>
   <div class="form-group">
-    <label for="title">Title</label>
+    <label for="title" i18n="@@titlelabel">Title</label>
     <input class="form-control" id="title" formControlName="title">
   </div>
   <div class="form-group">
@@ -15,7 +15,7 @@
     <input class="form-control" id="subtitle" formControlName="subtitle">
   </div>
   <div class="form-group">
-    <label for="description">Description</label>
+    <label for="description" i18n="@@desclabel">Description</label>
     <textarea class="form-control" id="description"
               formControlName="description"></textarea>
   </div>
@@ -34,7 +34,7 @@
     </div>
 
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">Speichern</button>
+  <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid" i18n="@@submitbutton">Speichern</button>
 </form>
 
 <ul>
