@@ -11,6 +11,7 @@ import {BookDetailsComponent} from './book-details/book-details.component';
 import {CreateBookComponent} from './create-book/create-book.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BookFormComponent} from './book-form/book-form.component';
+import { RepeatDirective } from './repeat.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {BookFormComponent} from './book-form/book-form.component';
     DashboardComponent,
     BookDetailsComponent,
     CreateBookComponent,
-    BookFormComponent
+    BookFormComponent,
+    RepeatDirective
   ],
   imports: [
     CommonModule,

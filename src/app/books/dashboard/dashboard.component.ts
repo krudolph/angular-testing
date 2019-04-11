@@ -29,10 +29,12 @@ export class DashboardComponent implements OnInit {
 
   rateUp(book: Book) {
     const updated = this.rs.rateUp(book);
+    console.log(updated);
   }
 
   rateDown(book: Book) {
     const updated = this.rs.rateDown(book);
+    console.log(updated);
   }
 
 }
